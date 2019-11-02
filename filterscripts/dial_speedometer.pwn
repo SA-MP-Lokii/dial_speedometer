@@ -5,7 +5,7 @@
 
 new speedo_timer;
 new PlayerText:Speedo_Needle[MAX_PLAYERS];
-new Text:Speedo_Dial[12];
+new Text:Speedo_Dial[13];
 
 Float:GetVehicleSpeed(vehicleid)
 {
@@ -25,8 +25,8 @@ public OnFilterScriptInit()
 	TextDrawBackgroundColor(Speedo_Dial[0], 255);
 	TextDrawFont(Speedo_Dial[0], 4);
 	TextDrawSetProportional(Speedo_Dial[0], 0);
-	Speedo_Dial[1] = TextDrawCreate(564.000061, 393.674041, "20");
-	TextDrawLetterSize(Speedo_Dial[1], 0.209333, 1.222518);
+	Speedo_Dial[1] = TextDrawCreate(564.000061, 393.674041, "0");
+	TextDrawLetterSize(Speedo_Dial[1], 0.209333, 1.222517);
 	TextDrawAlignment(Speedo_Dial[1], 1);
 	TextDrawColor(Speedo_Dial[1], -1);
 	TextDrawSetShadow(Speedo_Dial[1], 0);
@@ -34,15 +34,15 @@ public OnFilterScriptInit()
 	TextDrawFont(Speedo_Dial[1], 1);
 	TextDrawSetProportional(Speedo_Dial[1], 1);
 	Speedo_Dial[2] = TextDrawCreate(617.199401, 393.674041, "220");
-	TextDrawLetterSize(Speedo_Dial[2], 0.209333, 1.222518);
+	TextDrawLetterSize(Speedo_Dial[2], 0.209333, 1.222517);
 	TextDrawAlignment(Speedo_Dial[2], 1);
 	TextDrawColor(Speedo_Dial[2], -1);
 	TextDrawSetShadow(Speedo_Dial[2], 0);
 	TextDrawBackgroundColor(Speedo_Dial[2], 255);
 	TextDrawFont(Speedo_Dial[2], 1);
 	TextDrawSetProportional(Speedo_Dial[2], 1);
-	Speedo_Dial[3] = TextDrawCreate(559.000061, 381.174041, "40");
-	TextDrawLetterSize(Speedo_Dial[3], 0.209333, 1.222518);
+	Speedo_Dial[3] = TextDrawCreate(559.000061, 381.174041, "20");
+	TextDrawLetterSize(Speedo_Dial[3], 0.209333, 1.222517);
 	TextDrawAlignment(Speedo_Dial[3], 1);
 	TextDrawColor(Speedo_Dial[3], -1);
 	TextDrawSetShadow(Speedo_Dial[3], 0);
@@ -50,15 +50,15 @@ public OnFilterScriptInit()
 	TextDrawFont(Speedo_Dial[3], 1);
 	TextDrawSetProportional(Speedo_Dial[3], 1);
 	Speedo_Dial[4] = TextDrawCreate(620.500061, 381.174041, "200");
-	TextDrawLetterSize(Speedo_Dial[4], 0.209333, 1.222518);
+	TextDrawLetterSize(Speedo_Dial[4], 0.209333, 1.222517);
 	TextDrawAlignment(Speedo_Dial[4], 1);
 	TextDrawColor(Speedo_Dial[4], -1);
 	TextDrawSetShadow(Speedo_Dial[4], 0);
 	TextDrawBackgroundColor(Speedo_Dial[4], 255);
 	TextDrawFont(Speedo_Dial[4], 1);
 	TextDrawSetProportional(Speedo_Dial[4], 1);
-	Speedo_Dial[5] = TextDrawCreate(557.500061, 367.674041, "60");
-	TextDrawLetterSize(Speedo_Dial[5], 0.209333, 1.222518);
+	Speedo_Dial[5] = TextDrawCreate(557.500061, 367.674041, "40");
+	TextDrawLetterSize(Speedo_Dial[5], 0.209333, 1.222517);
 	TextDrawAlignment(Speedo_Dial[5], 1);
 	TextDrawColor(Speedo_Dial[5], -1);
 	TextDrawSetShadow(Speedo_Dial[5], 0);
@@ -66,15 +66,15 @@ public OnFilterScriptInit()
 	TextDrawFont(Speedo_Dial[5], 1);
 	TextDrawSetProportional(Speedo_Dial[5], 1);
 	Speedo_Dial[6] = TextDrawCreate(621.500061, 367.674041, "180");
-	TextDrawLetterSize(Speedo_Dial[6], 0.209333, 1.222518);
+	TextDrawLetterSize(Speedo_Dial[6], 0.209333, 1.222517);
 	TextDrawAlignment(Speedo_Dial[6], 1);
 	TextDrawColor(Speedo_Dial[6], -1);
 	TextDrawSetShadow(Speedo_Dial[6], 0);
 	TextDrawBackgroundColor(Speedo_Dial[6], 255);
 	TextDrawFont(Speedo_Dial[6], 1);
 	TextDrawSetProportional(Speedo_Dial[6], 1);
-	Speedo_Dial[7] = TextDrawCreate(561.000061, 354.174041, "80");
-	TextDrawLetterSize(Speedo_Dial[7], 0.209333, 1.222518);
+	Speedo_Dial[7] = TextDrawCreate(561.000061, 354.174041, "60");
+	TextDrawLetterSize(Speedo_Dial[7], 0.209333, 1.222517);
 	TextDrawAlignment(Speedo_Dial[7], 1);
 	TextDrawColor(Speedo_Dial[7], -1);
 	TextDrawSetShadow(Speedo_Dial[7], 0);
@@ -82,37 +82,45 @@ public OnFilterScriptInit()
 	TextDrawFont(Speedo_Dial[7], 1);
 	TextDrawSetProportional(Speedo_Dial[7], 1);
 	Speedo_Dial[8] = TextDrawCreate(620.500061, 354.174041, "160");
-	TextDrawLetterSize(Speedo_Dial[8], 0.209333, 1.222518);
+	TextDrawLetterSize(Speedo_Dial[8], 0.209333, 1.222517);
 	TextDrawAlignment(Speedo_Dial[8], 1);
 	TextDrawColor(Speedo_Dial[8], -1);
 	TextDrawSetShadow(Speedo_Dial[8], 0);
 	TextDrawBackgroundColor(Speedo_Dial[8], 255);
 	TextDrawFont(Speedo_Dial[8], 1);
 	TextDrawSetProportional(Speedo_Dial[8], 1);
-	Speedo_Dial[9] = TextDrawCreate(567.500061, 343.174041, "100");
-	TextDrawLetterSize(Speedo_Dial[9], 0.209333, 1.222518);
+	Speedo_Dial[9] = TextDrawCreate(567.500061, 343.174041, "80");
+	TextDrawLetterSize(Speedo_Dial[9], 0.209333, 1.222517);
 	TextDrawAlignment(Speedo_Dial[9], 1);
 	TextDrawColor(Speedo_Dial[9], -1);
 	TextDrawSetShadow(Speedo_Dial[9], 0);
 	TextDrawBackgroundColor(Speedo_Dial[9], 255);
 	TextDrawFont(Speedo_Dial[9], 1);
 	TextDrawSetProportional(Speedo_Dial[9], 1);
-	Speedo_Dial[10] = TextDrawCreate(588.500061, 335.174041, "120");
-	TextDrawLetterSize(Speedo_Dial[10], 0.209333, 1.222518);
+	Speedo_Dial[10] = TextDrawCreate(578.835815, 337.374176, "100");
+	TextDrawLetterSize(Speedo_Dial[10], 0.209333, 1.222517);
 	TextDrawAlignment(Speedo_Dial[10], 1);
 	TextDrawColor(Speedo_Dial[10], -1);
 	TextDrawSetShadow(Speedo_Dial[10], 0);
 	TextDrawBackgroundColor(Speedo_Dial[10], 255);
 	TextDrawFont(Speedo_Dial[10], 1);
 	TextDrawSetProportional(Speedo_Dial[10], 1);
-	Speedo_Dial[11] = TextDrawCreate(608.500061, 341.174041, "140");
-	TextDrawLetterSize(Speedo_Dial[11], 0.209333, 1.222518);
+	Speedo_Dial[11] = TextDrawCreate(609.699768, 342.174102, "140");
+	TextDrawLetterSize(Speedo_Dial[11], 0.209333, 1.222517);
 	TextDrawAlignment(Speedo_Dial[11], 1);
 	TextDrawColor(Speedo_Dial[11], -1);
 	TextDrawSetShadow(Speedo_Dial[11], 0);
 	TextDrawBackgroundColor(Speedo_Dial[11], 255);
 	TextDrawFont(Speedo_Dial[11], 1);
 	TextDrawSetProportional(Speedo_Dial[11], 1);
+	Speedo_Dial[12] = TextDrawCreate(594.403503, 336.473754, "120");
+	TextDrawLetterSize(Speedo_Dial[12], 0.209333, 1.222517);
+	TextDrawAlignment(Speedo_Dial[12], 1);
+	TextDrawColor(Speedo_Dial[12], -1);
+	TextDrawSetShadow(Speedo_Dial[12], 0);
+	TextDrawBackgroundColor(Speedo_Dial[12], 255);
+	TextDrawFont(Speedo_Dial[12], 1);
+	TextDrawSetProportional(Speedo_Dial[12], 1);
 	speedo_timer = SetTimer("Speedo", 100, true);
 	foreach(new i : Player)
 	{
@@ -170,7 +178,7 @@ public OnFilterScriptExit()
 	{
 	    PlayerTextDrawDestroy(x, Speedo_Needle[x]);
 	}
-	for(new i = 0; i < 12; i ++)
+	for(new i = 0; i < 13; i ++)
 	{
 	    TextDrawDestroy(Speedo_Dial[i]);
 	}
@@ -209,7 +217,7 @@ public OnPlayerStateChange(playerid, newstate, oldstate)
 {
 	if(newstate == 2)
 	{
-	    for(new i = 0; i < 12; i++)
+	    for(new i = 0; i < 13; i++)
 	    {
 			TextDrawShowForPlayer(playerid, Speedo_Dial[i]);
 	    }
@@ -218,7 +226,7 @@ public OnPlayerStateChange(playerid, newstate, oldstate)
 	}
 	if(newstate != 2 && oldstate == 2)
 	{
-	    for(new i = 0; i < 12; i++)
+	    for(new i = 0; i < 13; i++)
 	    {
 			TextDrawHideForPlayer(playerid, Speedo_Dial[i]);
 	    }
